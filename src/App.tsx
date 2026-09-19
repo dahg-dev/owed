@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {  type Person } from './data/initialData'
+import {  type Contact } from './data/initialData'
 import ContactsPage from './pages/ContactsPage'
 
 const createRandomId = () => {
@@ -11,24 +11,22 @@ const createRandomId = () => {
 }
 
 function App() {
-  const [people, setPeople] = useState<Person[]>([])
+  const [people, setPeople] = useState<Contact[]>([])
 
-  const addPerson = (name: string) => {
-    const trimmed = name.trim()
-    if (!trimmed) return
-
-    setPeople((current) => [{ id: createRandomId(), name: trimmed }, ...current])
+  const addContact = (name: string) => {
+      //throw new Error()
+    setPeople((current) => [{ id: createRandomId(), name: name }, ...current])
   }
 
-  const deletePerson = (id: string) => {
-    setPeople((current) => current.filter((person) => person.id !== id))
+  const deleteContact = (id: string) => {
+    setPeople((current) => current.filter((contact) => contact.id !== id))
   }
 
   return (
     <ContactsPage
       people={people}
-      onAddPerson={addPerson}
-      onDeletePerson={deletePerson}
+      onAddContact={addContact}
+      onDeleteContact={deleteContact}
     />
   )
 }

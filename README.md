@@ -7,7 +7,7 @@ Application for tracking debts and contacts, built with React, TypeScript, and V
 The app already includes the base contact management features:
 
 - Add new contacts with a name
-- Generate a unique ID for each person
+- Generate a unique ID for each contact
 - List all registered contacts
 - Edit the name of an existing contact
 - Delete contacts with a temporary undo option
@@ -48,7 +48,7 @@ This initial version serves as the foundation for a debt-tracking app between pe
 ## Roadmap
 
 - Basic contact management
-- Debt registration per person
+- Debt registration per contact
 - Overall and per-contact balance
 - Payment and movement history
 - Filters and search

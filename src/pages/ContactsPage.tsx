@@ -1,18 +1,18 @@
 import ContactForm from '../components/ContactForm'
 import ContactList from '../components/ContactList'
-import type { Person } from '../data/initialData'
+import type { Contact } from '../data/initialData'
 import { useTranslation } from 'react-i18next'
 
 type ContactsPageProps = {
-  people: Person[]
-  onAddPerson: (name: string) => void
-  onDeletePerson: (id: string) => void
+  people: Contact[]
+  onAddContact: (name: string) => void
+  onDeleteContact: (id: string) => void
 }
 
 export default function ContactsPage({
   people,
-  onAddPerson,
-  onDeletePerson
+  onAddContact,
+  onDeleteContact
 }: ContactsPageProps) {
   const { i18n, t } = useTranslation()
 
@@ -40,9 +40,9 @@ export default function ContactsPage({
           </div>
         </div>
 
-        <ContactForm onAdd={onAddPerson} />
+        <ContactForm onAdd={onAddContact} />
 
-        <ContactList people={people} onDelete={onDeletePerson} />
+        <ContactList people={people} onDelete={onDeleteContact} />
 
       </div>
     </main>

@@ -1,4 +1,4 @@
-export type Person = {
+export type Contact = {
   id: string
   name: string
 }
@@ -7,7 +7,7 @@ export type MovementType = 'debt' | 'credit'
 
 export type Movement = {
   id: string
-  personId: string
+  contactId: string
   type: MovementType
   amount: number
   note: string
